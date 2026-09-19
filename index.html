@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adnan Ansari | Data Analyst Portfolio</title>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #0b1b2f;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      padding: 16px 0;
+      border-bottom: 1px solid #e9eef3;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-weight: 500;
+      color: #1e293b;
+    }
+
+    .nav-links a {
+      transition: color 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: #3b82f6;
+    }
+
+    .btn-outline {
+      border: 1.5px solid #3b82f6;
+      padding: 8px 18px;
+      border-radius: 40px;
+      color: #3b82f6;
+      font-weight: 600;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .btn-outline:hover {
+      background: #3b82f6;
+      color: white;
+    }
+
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: none;
+      font-size: 1.6rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #1e293b;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      color: #0b1b2f;
+    }
+
+    .section-subtitle {
+      color: #4b5e77;
+      margin-bottom: 48px;
+      font-size: 1.05rem;
+      max-width: 700px;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 40px 0 80px 0;
+      background: linear-gradient(145deg, #ffffff 0%, #f2f7ff 100%);
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1.2;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: #e6f0ff;
+      color: #1e4fd9;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 24px;
+      border: 1px solid #c9dcff;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      color: #0b1b2f;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-desc {
+      font-size: 1.2rem;
+      color: #2c3e50;
+      margin-bottom: 24px;
+      max-width: 600px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+
+    .tag {
+      background: white;
+      border: 1px solid #dbe4f0;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #1e3a8a;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    .btn-primary {
+      background: #1e3a8a;
+      color: white;
+      padding: 14px 34px;
+      border-radius: 40px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 10px 20px -8px rgba(30, 58, 138, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: #2563eb;
+    }
+
+    .hero-image {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .avatar-box {
+      width: 320px;
+      height: 320px;
+      background: linear-gradient(135deg, #dbeafe, #eff6ff);
+      border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid white;
+      box-shadow: 0 30px 40px -20px rgba(0, 30, 80, 0.25);
+    }
+
+    .avatar-box i {
+      font-size: 8rem;
+      color: #1e4fd9;
+      opacity: 0.8;
+    }
+
+    /* About short */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 40px;
+      background: white;
+      padding: 40px;
+      border-radius: 40px;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+      border: 1px solid #eef3f9;
+    }
+
+    .about-grid h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .about-grid p {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+      color: #1e293b;
+    }
+
+    .info-item i {
+      width: 24px;
+      color: #3b82f6;
+      font-size: 1.1rem;
+    }
+
+    .stat-box {
+      background: #f2f7ff;
+      border-radius: 24px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .stat-box .number {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1e3a8a;
+    }
+
+    /* Skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 28px;
+    }
+
+    .skill-card {
+      background: white;
+      border-radius: 28px;
+      padding: 28px 20px;
+      text-align: center;
+      border: 1px solid #eef3f9;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-6px);
+      border-color: #b9d2ff;
+      box-shadow: 0 20px 30px -10px rgba(30, 58, 138, 0.1);
+    }
+
+    .skill-card i {
+      font-size: 2.5rem;
+      color: #3b82f6;
+      margin-bottom: 16px;
+    }
+
+    .skill-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .skill-card p {
+      color: #4b5e77;
+      font-size: 0.9rem;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 28px;
+      padding: 28px;
+      border: 1px solid #eef3f9;
+      transition: all 0.2s;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02);
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 36px -12px rgba(0, 30, 80, 0.12);
+      border-color: #b9d2ff;
+    }
+
+    .project-card i {
+      font-size: 2rem;
+      color: #3b82f6;
+      margin-bottom: 18px;
+    }
+
+    .project-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: #4b5e77;
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .project-tags span {
+      background: #f2f7ff;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #1e4fd9;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      background: white;
+      border-radius: 40px;
+      padding: 48px;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+      border: 1px solid #eef3f9;
+    }
+
+    .contact-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 24px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .contact-detail i {
+      width: 24px;
+      color: #3b82f6;
+      font-size: 1.2rem;
+    }
+
+    .contact-detail a {
+      color: #1e293b;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .contact-detail a:hover {
+      color: #3b82f6;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .social-links a {
+      width: 44px;
+      height: 44px;
+      background: #f2f7ff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1e4fd9;
+      transition: all 0.2s;
+    }
+
+    .social-links a:hover {
+      background: #1e3a8a;
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      background: white;
+      padding: 30px 0;
+      border-top: 1px solid #e9eef3;
+      text-align: center;
+      color: #4b5e77;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-text h1 {
+        font-size: 2.8rem;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        padding: 32px;
+      }
+
+      .avatar-box {
+        width: 260px;
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px 24px 30px;
+        gap: 18px;
+        box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid #e9eef3;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-container {
+        position: relative;
+      }
+
+      .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .tags {
+        justify-content: center;
+      }
+
+      .btn-primary {
+        margin: 0 auto;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .avatar-box {
+        width: 220px;
+        height: 220px;
+      }
+
+      .avatar-box i {
+        font-size: 5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+
+      .container {
+        padding: 0 18px;
+      }
+
+      .about-grid {
+        padding: 28px 20px;
+      }
+
+      .contact-grid {
+        padding: 28px 20px;
+      }
+    }
+
+    /* Simple page transition style for 5 pages - we use single page with sections */
+    .page-section {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">Adnan Ansari</div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn-outline" style="padding:8px 18px; margin-left:8px;">Hire Me</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page 1: Home / Hero -->
+  <section id="home" class="hero page-section">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <span class="hero-badge"><i class="fas fa-chart-line" style="margin-right: 6px;"></i> Aspiring Data Analyst</span>
+        <h1>Hi, I'm <span class="hero-highlight">Adnan Ansari</span></h1>
+        <p class="hero-desc">Data Analyst from Delhi, India — turning raw data into actionable insights with Python, SQL, and visual storytelling.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">Matplotlib</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Excel</span>
+          <span class="tag">Data Visualization</span>
+        </div>
+        <a href="#projects" class="btn-primary">View My Work <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="hero-image">
+        <div class="avatar-box">
+          <i class="fas fa-user-chart"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page 2: About -->
+  <section id="about" class="page-section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">Aspiring Data Analyst with hands-on experience in real-world data analysis projects using Python.</p>
+      <div class="about-grid">
+        <div>
+          <h3>Adnan Ansari</h3>
+          <p>I'm an aspiring Data Analyst based in Delhi, India, skilled in extracting insights from data and creating compelling visualizations. I have hands-on experience in real-world data analysis projects using Python, and I'm seeking an opportunity to apply my analytical skills in a professional environment.</p>
+          <p>My toolkit includes Python (Pandas, Matplotlib), Excel, SQL (Basics), and data visualization. I enjoy transforming complex datasets into clear, actionable stories that drive decisions.</p>
+          <div class="info-item">
+            <i class="fas fa-map-pin"></i>
+            <span>Delhi, India</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone-alt"></i>
+            <span>+91-9355110556</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <span>Alamadnan602@gmail.com</span>
+          </div>
+        </div>
+        <div>
+          <div class="stat-box">
+            <div class="number">5+</div>
+            <div>Projects Completed</div>
+          </div>
+          <div class="stat-box">
+            <div class="number">100%</div>
+            <div>Commitment to Data</div>
+          </div>
+          <div class="stat-box">
+            <div class="number">3+</div>
+            <div>Core Tools</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page 3: Skills -->
+  <section id="skills" class="page-section" style="background: #f9fcff;">
+    <div class="container">
+      <h2 class="section-title">Skills & Expertise</h2>
+      <p class="section-subtitle">Technical toolkit for data analysis, visualization, and insight generation.</p>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <i class="fab fa-python"></i>
+          <h4>Python</h4>
+          <p>Pandas, Matplotlib, data manipulation & analysis</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-file-excel"></i>
+          <h4>Excel</h4>
+          <p>Advanced formulas, pivot tables, data cleaning</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-database"></i>
+          <h4>SQL</h4>
+          <p>Querying, joins, aggregations (Basics)</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-chart-pie"></i>
+          <h4>Data Analysis</h4>
+          <p>Extracting trends, patterns, and insights</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-chart-bar"></i>
+          <h4>Data Visualization</h4>
+          <p>Clear charts, dashboards, storytelling</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-code"></i>
+          <h4>Python Libraries</h4>
+          <p>Pandas, Matplotlib, NumPy, Seaborn</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page 4: Projects -->
+  <section id="projects" class="page-section">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-subtitle">Real-world data analysis projects demonstrating my ability to deliver insights.</p>
+      <div class="projects-grid">
+        <div class="project-card">
+          <i class="fas fa-motorcycle"></i>
+          <h3>Blinkit Data Analysis</h3>
+          <p>Analyzed real delivery data to understand profit trends. Calculated daily profit using Python, identified impact of fuel cost on earnings, and created visualizations to support findings.</p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>Matplotlib</span>
+            <span>Data Analysis</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <i class="fas fa-chart-line"></i>
+          <h3>Sales Dashboard Analysis</h3>
+          <p>Explored retail sales dataset to uncover top-performing products and regions. Built interactive visualizations to track KPIs and seasonal trends using Python and Excel.</p>
+          <div class="project-tags">
+            <span>Excel</span>
+            <span>Python</span>
+            <span>Visualization</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <i class="fas fa-users"></i>
+          <h3>Customer Churn Insights</h3>
+          <p>Analyzed telecom customer data to identify key factors driving churn. Created clear visual reports that highlighted at-risk segments for retention strategies.</p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>SQL Basics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page 5: Contact -->
+  <section id="contact" class="page-section" style="background: #f9fcff;">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">Feel free to reach out for opportunities, collaborations, or just to say hello!</p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Let's Connect</h3>
+          <div class="contact-detail">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Delhi, India</span>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:+919355110556">+91-9355110556</a>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:Alamadnan602@gmail.com">Alamadnan602@gmail.com</a>
+          </div>
+          <div class="contact-detail">
+            <i class="fab fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/adnan-alam" target="_blank">Adnan Alam | LinkedIn</a>
+          </div>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/adnan-alam" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:Alamadnan602@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="tel:+919355110556" aria-label="Phone"><i class="fas fa-phone"></i></a>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+          <p style="font-size: 1.1rem; color: #1e293b; margin-bottom: 24px;">I'm actively looking for data analyst opportunities. Let's discuss how I can contribute to your team.</p>
+          <a href="mailto:Alamadnan602@gmail.com" class="btn-primary" style="align-self: flex-start;">Send Email <i class="fas fa-paper-plane"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Adnan Ansari — Data Analyst Portfolio. All rights reserved.</p>
+      <p style="margin-top: 8px; font-size: 0.85rem;">Delhi, India · +91-9355110556 · Alamadnan602@gmail.com</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for mobile menu and smooth interactions -->
+  <script>
+    (function() {
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+
+      if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+          navLinks.classList.toggle('active');
+        });
+      }
+
+      // Close mobile menu when a link is clicked
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+        });
+      });
+
+      // Optional: highlight active nav link on scroll (simple)
+      const sections = document.querySelectorAll('section[id]');
+      const navItems = document.querySelectorAll('.nav-links a:not(.btn-outline)');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 100;
+          if (window.scrollY >= sectionTop) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navItems.forEach(item => {
+          item.style.color = '#1e293b';
+          if (item.getAttribute('href') === `#${current}`) {
+            item.style.color = '#3b82f6';
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
